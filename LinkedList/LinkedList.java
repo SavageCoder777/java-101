@@ -1,16 +1,15 @@
 package LinkedList;
-import LinkedList1.LinkedListNode1;
 
 public class LinkedList {
-    protected LinkedListNode1 head;
-    protected LinkedListNode1 tail;
+    protected LinkedListNode head;
+    protected LinkedListNode tail;
     /* The following four LinkedListNode properties are
        used in the same way and can be condensed into
        just one if needed. */
-    protected LinkedListNode1 printer;
-    protected LinkedListNode1 deleter; 
-    protected LinkedListNode1 sorter;
-    protected LinkedListNode1 duplicate;
+    protected LinkedListNode printer;
+    protected LinkedListNode deleter; 
+    protected LinkedListNode sorter;
+    protected LinkedListNode duplicate;
     protected boolean run;
     protected boolean test;
     protected boolean sorted;
@@ -34,7 +33,7 @@ public class LinkedList {
 
     public void add(int val) {
         test = true;
-        LinkedListNode1 node = new LinkedListNode1(val);
+        LinkedListNode node = new LinkedListNode(val);
         if (head == null) {
             head = node;
             tail = node;
@@ -81,7 +80,7 @@ public class LinkedList {
         System.out.println(" ");
     }
 
-    public void sortLinkedList(LinkedListNode1 oneToAdd) {
+    public void sortLinkedList(LinkedListNode oneToAdd) {
         sorter = head;
         run = true;
         count = 0;
@@ -117,7 +116,7 @@ public class LinkedList {
         }
     }
     
-    public boolean noAddingDuplicates(LinkedListNode1 toCheck, boolean run) {
+    public boolean noAddingDuplicates(LinkedListNode toCheck, boolean run) {
         duplicate = head;
         while (duplicate != null) {
             if (toCheck.getValue() == duplicate.getValue()) {

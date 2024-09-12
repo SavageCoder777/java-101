@@ -4,7 +4,7 @@ public class LinkedListNode {
     private int value;
     private LinkedListNode next;
     private LinkedListNode previous;
-
+    
     public LinkedListNode(int val) {
         this.value = val;
         this.next = null;
