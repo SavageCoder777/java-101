@@ -1,4 +1,4 @@
-package LinkedList;
+package src.datastructures.linkedlist;
 
 public class LinkedListNode {
     private int value;
