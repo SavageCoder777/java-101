@@ -1,6 +1,6 @@
 package tests.datastructures.queue;
 
-import src.datastructures.queue.queueLlist;;;;
+import src.datastructures.queue.queueLlist;
 
 public class queueLlistTest {
     
@@ -11,6 +11,7 @@ public class queueLlistTest {
         }
         test.dequeue();
         test.dequeue();
-        test.size();
+        System.out.println(test.size());
+        test.printQueue();
     }
 }

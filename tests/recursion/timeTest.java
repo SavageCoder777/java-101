@@ -13,7 +13,7 @@ public class timeTest {
         averageLoop = 0;
         averageRecursion = 0;
         time = 0;
-        times = 50;
+        times = 500;
     }
 
     public void test() {
@@ -22,22 +22,29 @@ public class timeTest {
         averageLoop = 0;
         averageRecursion = 0;
 
-        for (int rep = 1; rep <= 100; rep++) {
+        for (int rep = 1; rep <= times; rep++) {
             time = System.currentTimeMillis();
-            testLoop.reverseSum(times);
-            time = (System.currentTimeMillis() - time);
+            System.out.println(time);
+            for (int count = 1; count <= times; count++) {
+                testLoop.reverseSum(times);
+            } time = (System.currentTimeMillis() - time) / times;
             averageLoop += time;
+            System.out.print(averageLoop + ", ");
         } averageLoop /= times;
+        System.out.println();
 
-        for (int rep = 1; rep <= 100; rep++) {
-            time = System.currentTimeMillis();
-            testRecursion.reverseSum(times);
-            time = (System.currentTimeMillis() - time);
-            averageRecursion += time;
-        } averageRecursion /= times;
+        // for (int rep = 1; rep <= times; rep++) {
+        //     time = System.currentTimeMillis();
+        //     for (int count = 1; count <= times; count++) {
+        //         testRecursion.reverseSum(times);
+        //     } time = (System.currentTimeMillis() - time) / times;
+        //     averageRecursion += times;
+        //     System.out.print(averageRecursion + ", ");
+        // } averageRecursion /= times;
+        // System.out.println();
 
-        System.out.println("Average Loop: " + averageLoop);
-        System.out.println("Average Recursion: " + averageRecursion);
+        // System.out.println("Average Loop: " + averageLoop);
+        // System.out.println("Average Recursion: " + averageRecursion);
     }
 
     public static void main(String[] args) {

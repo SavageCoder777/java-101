@@ -8,7 +8,7 @@ public class queueArray {
     
     public queueArray(int numInArray) {
         this.queueArray = new int[numInArray];
-        this.values = numInArray;
+        this.values = numInArray - 1;
         this.count = 0;
         this.numValues = 0;
     }
@@ -30,14 +30,15 @@ public class queueArray {
         queueArray[values] = 0;
     }
 
-    public void size() {
+    public int size() {
         numValues = 0;
         for (int increase = 0; increase <= values; increase++) {
             if (queueArray[increase] != 0) {
                 numValues++;
             }
         }
-        System.out.println("The queue has " + numValues + " elements.");
+        // System.out.println("The queue has " + numValues + " elements.");
+        return numValues;
     }
 
     public void printQueue() {
