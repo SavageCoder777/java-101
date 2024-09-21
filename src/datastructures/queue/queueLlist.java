@@ -10,6 +10,7 @@ public class queueLlist {
     protected String toPrint;
     protected boolean run;
     protected int count;
+    protected int temp;
 
     public queueLlist() {
         this.head = null;
@@ -32,9 +33,11 @@ public class queueLlist {
         }
     }
 
-    public void dequeue() {
+    public int dequeue() {
+        temp = head.getValue();
         head.getNext().setPrevious(null);
         head = head.getNext();
+        return temp;
     }
 
     public int size() {

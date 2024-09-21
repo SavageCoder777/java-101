@@ -5,6 +5,7 @@ public class queueArray {
     int count;
     int numValues;
     int[] queueArray;
+    int temp;
     
     public queueArray(int numInArray) {
         this.queueArray = new int[numInArray];
@@ -22,12 +23,14 @@ public class queueArray {
         }
     }
 
-    public void dequeue() {
+    public int dequeue() {
+        temp = queueArray[0];
         queueArray[0] = 0;
         for (int increase = 1; increase <= values; increase++) {
             queueArray[increase - 1] = queueArray[increase];
         }
         queueArray[values] = 0;
+        return temp;
     }
 
     public int size() {
