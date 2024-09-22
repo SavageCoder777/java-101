@@ -9,8 +9,9 @@ public class queueArrayTest {
         for (int i = 1; i <= 10; i++) {
             test.enqueue(i);
         }
-        test.dequeue();
-        test.dequeue();
+        test.printQueue();
+        System.out.println(test.dequeue());
+        System.out.println(test.dequeue());
         System.out.println(test.size());
         test.printQueue();
     }

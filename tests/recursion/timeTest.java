@@ -4,16 +4,17 @@ import src.recursion.loop;
 import src.recursion.recursion;
 
 public class timeTest {
-    int averageLoop;
-    int averageRecursion;
-    long time;
-    int times;
+    double averageLoop;
+    double averageRecursion;
+    double time;
+    double timeTwo;
+    double times;
 
     public timeTest() {
         averageLoop = 0;
         averageRecursion = 0;
         time = 0;
-        times = 500;
+        times = 1000;
     }
 
     public void test() {
@@ -21,30 +22,34 @@ public class timeTest {
         recursion testRecursion = new recursion();
         averageLoop = 0;
         averageRecursion = 0;
+        int temp = (int) times;
 
         for (int rep = 1; rep <= times; rep++) {
             time = System.currentTimeMillis();
-            System.out.println(time);
             for (int count = 1; count <= times; count++) {
-                testLoop.reverseSum(times);
-            } time = (System.currentTimeMillis() - time) / times;
-            averageLoop += time;
-            System.out.print(averageLoop + ", ");
+                testLoop.reverseSum(temp);
+            } timeTwo = System.currentTimeMillis();
+            timeTwo -= time;
+            timeTwo /= times;
+            averageLoop += timeTwo;
         } averageLoop /= times;
-        System.out.println();
+        
+        time = 0;
+        timeTwo = 0;
 
-        // for (int rep = 1; rep <= times; rep++) {
-        //     time = System.currentTimeMillis();
-        //     for (int count = 1; count <= times; count++) {
-        //         testRecursion.reverseSum(times);
-        //     } time = (System.currentTimeMillis() - time) / times;
-        //     averageRecursion += times;
-        //     System.out.print(averageRecursion + ", ");
-        // } averageRecursion /= times;
-        // System.out.println();
+        for (int rep = 1; rep <= times; rep++) {
+            time = System.currentTimeMillis();
+            for (int count = 1; count <= times; count++) {
+                testRecursion.reverseSum(temp);
+            } timeTwo = System.currentTimeMillis();
+            timeTwo -= time;
+            timeTwo /= times;
+            averageRecursion += timeTwo;
+        } averageRecursion /= times;
 
-        // System.out.println("Average Loop: " + averageLoop);
-        // System.out.println("Average Recursion: " + averageRecursion);
+        System.out.println("Average Loop: " + averageLoop);
+        System.out.println("Average Recursion: " + averageRecursion);
+        System.out.println("Recursion is approximately " + (averageRecursion - averageLoop) + " milliseconds slower than loops.");
     }
 
     public static void main(String[] args) {

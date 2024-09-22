@@ -2,7 +2,7 @@ package src.recursion;
 
 public class fibonacci {
     
-    public static int nfibonacci(int until) {
+    public int nfibonacci(int until) {
         if (until == 1) {
             return (0);
         } if (until == 2) {
@@ -10,14 +10,10 @@ public class fibonacci {
         } return nfibonacci(until - 1) + nfibonacci(until - 2);
     }
 
-    public static void printFibonnaci(int numTerms, int whichTerm) {
-        if (whichTerm < numTerms) {
-            System.out.print(nfibonacci(whichTerm) + " ");
-            printFibonnaci(numTerms, whichTerm + 1);
+    public void printFibonnaci(int numTerms, int startTerm) {
+        if (startTerm <= numTerms) {
+            System.out.print(nfibonacci(startTerm) + " ");
+            printFibonnaci(numTerms, startTerm + 1);
         }
-    }
-
-    public static void main(String[] args) {
-        printFibonnaci(10, 1);
     }
 }

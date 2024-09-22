@@ -10,6 +10,7 @@ public class stackLlist {
     protected String toPrint;
     protected boolean run;
     protected int count;
+    protected int temp;
 
     public stackLlist() {
         this.head = null;
@@ -32,9 +33,11 @@ public class stackLlist {
         }
     }
 
-    public void dequeue() {
+    public int dequeue() {
+        temp = tail.getValue();
         tail.getPrevious().setNext(null);
-        tail = head.getPrevious();
+        tail = tail.getPrevious();
+        return temp;
     }
 
     public int size() {
@@ -49,7 +52,7 @@ public class stackLlist {
         return count;
     }
 
-    public void printQueue() {
+    public void printStack() {
         printer = head;
         if (head == null) {
             System.out.print("No items in linked list");

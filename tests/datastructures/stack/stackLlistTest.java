@@ -1,18 +1,17 @@
-package tests.datastructures.queue;
+package tests.datastructures.stack;
 
-import src.datastructures.queue.queueLlist;
+import src.datastructures.stack.stackLlist;
 
-public class queueLlistTest {
-    
+public class stackLlistTest {
     public static void main(String[] args) {
-        queueLlist test = new queueLlist();
+        stackLlist test = new stackLlist();
         for (int i = 1; i <= 10; i++) {
             test.enqueue(i);
         }
-        test.printQueue();
+        test.printStack();
         System.out.println(test.dequeue());
         System.out.println(test.dequeue());
         System.out.println(test.size());
-        test.printQueue();
+        test.printStack();
     }
 }
