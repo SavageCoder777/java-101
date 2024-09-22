@@ -1,4 +1,4 @@
-package LinkedList;
+package src.datastructures.linkedlist;
 
 public class LinkedListSortDuplicate extends LinkedList {
     
