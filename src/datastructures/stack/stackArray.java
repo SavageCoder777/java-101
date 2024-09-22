@@ -14,7 +14,7 @@ public class stackArray {
         this.numValues = 0;
     }
 
-    public void enqueue(int input) {
+    public void push(int input) {
         if (count <= values) {
             stackArray[count] = input;
             count++;
@@ -23,7 +23,7 @@ public class stackArray {
         }
     }
 
-    public int dequeue() {
+    public int pop() {
         for (int increase = 0; increase <= values; increase++) {
             if (stackArray[increase] == 0) {
                 temp = stackArray[increase - 1];

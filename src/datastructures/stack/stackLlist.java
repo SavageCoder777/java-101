@@ -21,7 +21,7 @@ public class stackLlist {
         this.count = 0;
     }
 
-    public void enqueue(int val) {
+    public void push(int val) {
         LinkedListNode node = new LinkedListNode(val);
         if (head == null) {
             head = node;
@@ -33,7 +33,7 @@ public class stackLlist {
         }
     }
 
-    public int dequeue() {
+    public int pop() {
         temp = tail.getValue();
         tail.getPrevious().setNext(null);
         tail = tail.getPrevious();
